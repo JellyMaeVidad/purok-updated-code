@@ -1,0 +1,11 @@
+{
+    "name": "mangu/monitoring",
+    "autoload": {
+        "psr-4": {
+            "Mangu\\Monitoring\\": "src/"
+        }
+    },
+    "require": {
+        "firebase/php-jwt": "^6.9"
+    }
+}
