@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useAuth } from '../../AuthContext';
 // IMPORTED IMAGES //
 import Ayaka from '../Admin/images/Ayaka.png';
-import Presidentsidebar from '../Sidebar/Presidentsidebar';
+import Secretarysidebar from '../Sidebar/Secretarysidebar';
 
 const ResidentList = () => {
   const location = useLocation();
@@ -137,7 +137,7 @@ const ResidentList = () => {
   const handleSearch = () => {
     // Filter the residents based on the search query
     const filteredResidents = residents.filter((resident) =>
-      `${resident.firstName} ${resident.lastName}} `.toLowerCase().includes(searchQuery.toLowerCase())
+      `${resident.firstName} ${resident.lastName} } `.toLowerCase().includes(searchQuery.toLowerCase())
     );
     return filteredResidents;
   };
@@ -157,7 +157,7 @@ const ResidentList = () => {
               <span className='material-icons-sharp'>close</span>
             </div>
           </div>
-          <Presidentsidebar selectedItem={selectedItem} handleSelectItem={handleSelectItem} />
+          <Secretarysidebar selectedItem={selectedItem} handleSelectItem={handleSelectItem} />
         </aside>
         <main>
           <div className="dashboardMainContent">
@@ -200,7 +200,7 @@ const ResidentList = () => {
                           <th>Email</th>
                           <th>Middle Name</th>
                           <th>Birthdate</th>
-                          <th>Contact</th>
+                          <th>Parent Contact</th>
                           <th>Role</th>
                           <th>Action</th>
                         </tr>

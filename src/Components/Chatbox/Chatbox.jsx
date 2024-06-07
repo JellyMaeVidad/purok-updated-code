@@ -50,17 +50,7 @@ const Chatbox = () => {
 
   return (
     <div className="recent-orders">
-        <h1>Coming Soon!</h1>
-      <h2>Chatbox</h2>
-      <input className="btn"
-        type="text"
-        placeholder="Enter chat code"
-        value={chatCode}
-        onChange={handleChatCodeChange}
-      />
-      <button className='btn generate-code' onClick={handleGenerateCode}>Generate Code</button>
-      <button className='btn create-group' onClick={handleCreateGroup}>Create Group</button>
-      <button className='btn join-chatroom' onClick={handleJoinChatroom}>Join Chatroom</button>
+     
     </div>
   );
 };

@@ -41,10 +41,7 @@ const Treasurersidebar = () => {
 
   return (
     <div className="sidebar">
-      <NavLink to="/residentdashboard"  onClick={() => setActiveLink('dashboard')}>
-        <span className="material-icons-sharp">dashboard</span>
-        <h3>Dashboard</h3>
-      </NavLink>
+      
       <NavLink to="/treasurerprofile"  onClick={() => setActiveLink('dashboard')}>
         <span className="material-icons-sharp">account_circle</span>
         <h3>Profile</h3>

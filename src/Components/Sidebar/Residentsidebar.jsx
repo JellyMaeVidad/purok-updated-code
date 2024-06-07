@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation,useNavigate } from 'react-router-dom';
 import { useAuth } from '../../AuthContext'; 
-const Sidebar = () => {
+import PropTypes from 'prop-types';
+
+const Sidebar = ({ selectedItem, handleSelectItem, announcementCount }) => {
   const location = useLocation();
   const currentPath = location.pathname.split('/')[1]; // Extract the first part of the pathname
   const navigate = useNavigate();
   const { currentUser, logout, removeUser } = useAuth(); 
   const [activeLink, setActiveLink] = useState('');
   const [unreadAnnouncements, setUnreadAnnouncements] = useState(0); 
+  
 
 
   useEffect(() => {
@@ -64,10 +67,6 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <NavLink to="/residentdashboard"  onClick={() => setActiveLink('dashboard')}>
-        <span className="material-icons-sharp">dashboard</span>
-        <h3>Dashboard</h3>
-      </NavLink>
 
       <NavLink to="/residentprofile"  onClick={() => setActiveLink('dashboard')}>
         <span className="material-icons-sharp">account_circle</span>
@@ -81,7 +80,7 @@ const Sidebar = () => {
 
       <NavLink to="/announcement"  onClick={() => { setActiveLink('dashboard'); setUnreadAnnouncements(0); }}>
         <span className="material-icons-sharp">announcement</span>
-        <h3>Announcements {unreadAnnouncements > 0 && <span className="badge">{unreadAnnouncements}</span>}</h3>
+        <h3>Announcements { announcementCount > 0 &&  unreadAnnouncements > 0 && <span className="badge">{announcementCount}</span>}</h3>
       </NavLink>
     
       <NavLink   onClick={() => handleLogout}>

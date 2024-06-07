@@ -6,6 +6,7 @@ import ProtectedRoute from './ProtectedRoute';
 import PublicRoute from './PublicRoute';
 import { useAuth } from './AuthContext'; 
 import Mainpage from './Components/Mainpage/Mainpage'
+import About from './Components/Mainpage/About'
 
 // LOGIN //
 import Adminlogin from './Components/Admin/Adminlogin';
@@ -31,10 +32,12 @@ import Confirmedrequest from './Components/President/Confirmedrequest';
 import Secretaryprofile from './Components/Secretary/Secretaryprofile'
 import Secretaryrequest from './Components/Secretary/Secretaryrequest';
 import Sendrequest from './Components/Secretary/Sendrequest';
+import Secresidentlist from './Components/Secretary/Secresidentlist'
 // TREASURER VIEW // 
 import Treasurerprofile from './Components/Treasurer/Treasurerprofile';
 import Treasurerpayment from './Components/Treasurer/Treasurerpayment';
 import Paymenthistory from './Components/Treasurer/Paymenthistory';
+import Trearesidentlist from './Components/Treasurer/Trearesidentlist'
 
 function App() {
   
@@ -44,11 +47,12 @@ function App() {
       <Routes>
         {/* RESIDENT */}
         <Route path='/addresident' element={<PublicRoute><Addstudent /></PublicRoute>} />
-
+        {/*About*/}
         {/* LOGIN ROUTES */}
         <Route path='/' element={<PublicRoute><Mainpage /></PublicRoute>} />
         <Route path='/residentlogin' element={<PublicRoute><Studentlogin /></PublicRoute>} />
         <Route path='/presidentlogin' element={<PublicRoute><Adminlogin /></PublicRoute>} />
+        <Route path='/about' element={<PublicRoute><About/></PublicRoute>} />
          {/* DASHBOARD ROUTES */}
         <Route path='/residentdashboard' element={<ProtectedRoute roles={['resident']}><Residentdashboard /></ProtectedRoute>} />
         <Route path='/officerdashboard' element={<ProtectedRoute roles={['officer']}><Officerdashboard /></ProtectedRoute>} />
@@ -69,10 +73,12 @@ function App() {
         <Route path='/secretaryprofile' element={<ProtectedRoute roles={['secretary']}><Secretaryprofile /></ProtectedRoute>} />
         <Route path='/secretaryrequest' element={<ProtectedRoute roles={['secretary']}><Secretaryrequest /></ProtectedRoute>} />
         <Route path='/sendrequest' element={<ProtectedRoute roles={['secretary']}><Sendrequest /></ProtectedRoute>} />
+        <Route path='/secresidentlist' element={<ProtectedRoute roles={['secretary']}><Secresidentlist /></ProtectedRoute>} />
         {/* TREASURER MAIN */}
         <Route path='/treasurerprofile' element={<ProtectedRoute roles={['treasurer']}><Treasurerprofile /></ProtectedRoute>} />
         <Route path='/treasurerpayment' element={<ProtectedRoute roles={['treasurer']}><Treasurerpayment /></ProtectedRoute>} />
         <Route path='/paymenthistory' element={<ProtectedRoute roles={['treasurer']}><Paymenthistory /></ProtectedRoute>} />
+        <Route path='/trearesidentlist' element={<ProtectedRoute roles={['treasurer']}><Trearesidentlist /></ProtectedRoute>} />
       </Routes>
     </div>
   );

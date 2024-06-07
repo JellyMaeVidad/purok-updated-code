@@ -42,10 +42,7 @@ const Presidentsidebar = () => {
 
   return (
     <div className="sidebar">
-      <NavLink to="/secretarydashboard" onClick={() => setActiveLink('dashboard')}>
-        <span className="material-icons-sharp">dashboard</span>
-        <h3>Dashboard</h3>
-      </NavLink>
+
 
       <NavLink to="/secretaryprofile" onClick={() => setActiveLink('dashboard')}>
         <span className="material-icons-sharp">account_circle</span>

@@ -55,12 +55,12 @@ const Adminlogin = () => {
         </div>
         <div className="login-content">
           <form onSubmit={handleLogin}>
-            <img src={Logo} alt="logo" />
+            <img src={Logo} alt="logo" className="logo" />
             <h2 className="title">
-              Welcome <span style={{ color: 'red' }}>Admin</span>
+              Welcome <span className="highlight">Admin</span>
             </h2>
             {error && (
-              <p style={{ color: 'red', textAlign: 'center', marginTop: '10px' }}>{error}</p>
+              <p className="error-message">{error}</p>
             )}
             <div className="input-div one">
               <div className="i">
